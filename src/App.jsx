@@ -1,9 +1,21 @@
-import { useState } from 'react'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+// Pages
+import HomePage from './pages/HomePage.jsx';
+import InfoPage from './pages/InfoPage.jsx';
+import PostsPage from './pages/PostsPage.jsx';
 
 export default function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <><h1 className='text-center'>boilerplate</h1></>
-  )
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/info" element={<InfoPage />} />
+          <Route path="/posts" element={<PostsPage />} />
+        </Routes>
+      </BrowserRouter>
+    </>
+  );
 }
